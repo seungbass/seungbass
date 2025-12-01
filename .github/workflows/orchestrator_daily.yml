@@ -1,9 +1,9 @@
 name: Orchestrator Daily
 
-on:
-  schedule:
-    - cron: '0 2 * * *' # 02:00 UTC (adjust as needed)
-  workflow_dispatch: {}
+#on:
+ # schedule:
+  #  - cron: '0 2 * * *' # 02:00 UTC (adjust as needed)
+  #workflow_dispatch: {}
 
 jobs:
   orchestrate:
@@ -35,3 +35,4 @@ jobs:
           SUNO_API_KEY: ${{ secrets.SUNO_API_KEY }}
         run: |
           python -c "import sys; sys.path.insert(0, '.'); from orchestrator import run; run(genres=['移댄럹','濡쒗뙆??], per_genre_tracks=3, track_duration=180)"
+
